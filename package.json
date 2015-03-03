@@ -5,7 +5,9 @@
   "main": "index.js",
   "author": "Tony McGee <tmcgee.au@gmail.com>",
   "license": "ISC",
-  "scripts": {},
+  "scripts": {
+    "start": "npm install && node ./index.js"
+  },
   "dependencies": {
     "moment": "^2.9.0",
     "superagent": "^0.21.0",
