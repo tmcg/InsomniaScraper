@@ -63,7 +63,11 @@ function fetchDeals(current_deals, watch_list) {
         alertForWatchList(current_deals, watch_list);
 
       } else {
-        logOutput('Error! ' + res.text);
+        if(res.text.indexOf('overcapacity.jpg') > 0) {
+          logOutput('Over Capacity!');
+        } else {
+          logOutput('Error! ' + res.text);
+        }
       }
     });
 }
@@ -77,7 +81,7 @@ function pollDeals(watch_list) {
   }
 
   fetchDeals(current_deals, watch_deals);
-  temporal.loop(45000, function() {
+  temporal.loop(90000, function() {
     fetchDeals(current_deals, watch_deals);
   });
 }
